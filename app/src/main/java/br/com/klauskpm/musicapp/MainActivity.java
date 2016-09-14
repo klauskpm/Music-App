@@ -2,6 +2,9 @@ package br.com.klauskpm.musicapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -17,12 +20,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Create musicians, albums, musics; to list them
         createData();
 
         ArrayAdapter adapter = new MusicianAdapter(this, this.mArrayMusicians);
 
         ListView list = (ListView) findViewById(R.id.list_view);
         list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                final Musician musician = (Musician) parent.getItemAtPosition(position);
+                Log.d("MUSICIAN INTENT", musician.getmName());
+//                Intent intent = new Intent(parent.getContext(), MusicianActivity.class);
+//
+//                intent.putExtra("musician", musician);
+//                startActivity(intent);
+            }
+        });
     }
 
     private void createData() {
