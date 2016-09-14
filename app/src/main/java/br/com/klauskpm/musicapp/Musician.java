@@ -2,13 +2,16 @@ package br.com.klauskpm.musicapp;
 
 import android.graphics.drawable.Drawable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by klaus.machado on 14/09/2016.
  */
 public class Musician {
     private String mName;
     private Drawable mImg;
-    private int mAlbums;
+    private List<Album> mArrayAlbums = new ArrayList<Album>();
 
     public Musician() {}
 
@@ -33,12 +36,22 @@ public class Musician {
         this.mImg = mImg;
     }
 
-    public int getmAlbums() {
-        return mAlbums;
+    public List<Album> getmArrayAlbums() {
+        return mArrayAlbums;
     }
 
-    public void setmAlbums(int mAlbums) {
-        this.mAlbums = mAlbums;
+    public Album getmAlbum(int position) {
+        return mArrayAlbums.get(position);
     }
 
+    public void createAlbum(String albumName, Drawable albumCoverImg) {
+        Album album = new Album(albumName, albumCoverImg);
+        album.setmMusician(this);
+
+        mArrayAlbums.add(album);
+    }
+
+    public void setmArrayAlbums(List<Album> mArrayAlbums) {
+        this.mArrayAlbums = mArrayAlbums;
+    }
 }

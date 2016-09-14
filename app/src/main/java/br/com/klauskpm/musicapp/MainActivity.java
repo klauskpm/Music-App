@@ -17,18 +17,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Musician pharrellWilliams = new Musician("Pharrell Williams", getDrawable(R.drawable.pharrell_williams));
-        pharrellWilliams.setmAlbums(5);
-
-        Musician willIAm = new Musician("Will.I.Am", getDrawable(R.drawable.will_i_am));
-        willIAm.setmAlbums(0);
-
-        this.mArrayMusicians.add(pharrellWilliams);
-        this.mArrayMusicians.add(willIAm);
+        createData();
 
         ArrayAdapter adapter = new MusicianAdapter(this, this.mArrayMusicians);
 
         ListView list = (ListView) findViewById(R.id.list_view);
         list.setAdapter(adapter);
+    }
+
+    private void createData() {
+        Musician pharrellWilliams = new Musician("Pharrell Williams", getDrawable(R.drawable.pharrell_williams));
+        pharrellWilliams.createAlbum("GIRL", getDrawable(R.drawable.pharrell_williams_album_girl));
+
+        Musician willIAm = new Musician("Will.I.Am", getDrawable(R.drawable.will_i_am));
+
+        this.mArrayMusicians.add(pharrellWilliams);
+        this.mArrayMusicians.add(willIAm);
     }
 }

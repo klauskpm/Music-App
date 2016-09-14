@@ -45,8 +45,8 @@ public class MusicianAdapter extends ArrayAdapter {
         musicianImage.setBackground(currentMusician.getmImg());
         musicianName.setText(currentMusician.getmName());
 
-
-        String stringAlbumsCount = getContext().getString(R.string.musician_albums_count, currentMusician.getmAlbums());
+        int albumsCount = currentMusician.getmArrayAlbums().size();
+        String stringAlbumsCount = getContext().getString(R.string.musician_albums_count, albumsCount);
         musicianAlbumsCount.setText(stringAlbumsCount);
 
         return musicianView;
