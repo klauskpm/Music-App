@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 public class Musician {
     private String mName;
     private Drawable mImg;
-    private String[] mMusics;
+    private int mAlbums;
 
     public Musician() {}
 
@@ -33,11 +33,12 @@ public class Musician {
         this.mImg = mImg;
     }
 
-    public String[] getmMusics() {
-        return mMusics;
+    public int getmAlbums() {
+        return mAlbums;
     }
 
-    public void setmMusics(String[] mMusics) {
-        this.mMusics = mMusics;
+    public void setmAlbums(int mAlbums) {
+        this.mAlbums = mAlbums;
     }
+
 }

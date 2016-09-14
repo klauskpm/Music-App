@@ -18,7 +18,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Musician pharrellWilliams = new Musician("Pharrell Williams", getDrawable(R.drawable.pharrell_williams));
+        pharrellWilliams.setmAlbums(5);
+
         Musician willIAm = new Musician("Will.I.Am", getDrawable(R.drawable.will_i_am));
+        willIAm.setmAlbums(0);
 
         this.mArrayMusicians.add(pharrellWilliams);
         this.mArrayMusicians.add(willIAm);

@@ -38,11 +38,16 @@ public class MusicianAdapter extends ArrayAdapter {
 
         ImageView musicianImage = (ImageView) musicianView.findViewById(R.id.musician_image__image_view);
         TextView musicianName = (TextView) musicianView.findViewById(R.id.musician_name__text_view);
+        TextView musicianAlbumsCount = (TextView) musicianView.findViewById(R.id.musician_albuns_count__text_view);
 
         Musician currentMusician = this.mMusicians.get(position);
 
         musicianImage.setBackground(currentMusician.getmImg());
         musicianName.setText(currentMusician.getmName());
+
+
+        String stringAlbumsCount = getContext().getString(R.string.musician_albums_count, currentMusician.getmAlbums());
+        musicianAlbumsCount.setText(stringAlbumsCount);
 
         return musicianView;
     }

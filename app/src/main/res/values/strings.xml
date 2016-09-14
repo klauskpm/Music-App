@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Music App</string>
+    <string name="musician_albums_count">Album(s): %1$d</string>
 </resources>
