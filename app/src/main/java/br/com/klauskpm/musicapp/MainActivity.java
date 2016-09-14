@@ -2,11 +2,11 @@ package br.com.klauskpm.musicapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final Musician musician = (Musician) parent.getItemAtPosition(position);
-                Log.d("MUSICIAN INTENT", musician.getmName());
+                Toast.makeText(MainActivity.this, musician.getmName(), Toast.LENGTH_SHORT).show();
 //                Intent intent = new Intent(parent.getContext(), MusicianActivity.class);
 //
 //                intent.putExtra("musician", musician);
