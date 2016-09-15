@@ -24,12 +24,17 @@ public class MainActivity extends AppCompatActivity {
         ListView list = (ListView) findViewById(R.id.list_view);
         list.setAdapter(adapter);
 
+        // Add a behavior to the item click
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Finds the musician
                 final Musician musician = (Musician) parent.getItemAtPosition(position);
+                // Creates an intent
                 Intent intent = new Intent(parent.getContext(), MusicianActivity.class);
 
+                // Send the musician name, to find the albums,
+                // and start the activity
                 intent.putExtra("musician", musician.getmName());
                 startActivity(intent);
             }
