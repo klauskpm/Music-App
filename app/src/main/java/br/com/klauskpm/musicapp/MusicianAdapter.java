@@ -35,12 +35,12 @@ public class MusicianAdapter extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         // Inflating the musician item layout
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View musicianView = inflater.inflate(R.layout.musician_item, parent, false);
+        View musicianView = inflater.inflate(R.layout.basic_item, parent, false);
 
         // Searching and setting all resource views
-        ImageView musicianImage = (ImageView) musicianView.findViewById(R.id.musician_image__image_view);
-        TextView musicianName = (TextView) musicianView.findViewById(R.id.musician_name__text_view);
-        TextView musicianAlbumsCount = (TextView) musicianView.findViewById(R.id.musician_albuns_count__text_view);
+        ImageView musicianImage = (ImageView) musicianView.findViewById(R.id.list_item_image__image_view);
+        TextView musicianName = (TextView) musicianView.findViewById(R.id.list_item_title__text_view);
+        TextView musicianAlbumsCount = (TextView) musicianView.findViewById(R.id.list_item_subtitle__text_view);
 
         // Getting the data for the current musician
         Musician currentMusician = this.mMusicians.get(position);

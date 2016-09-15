@@ -8,4 +8,36 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ListItem">
+        <item name="android:layout_height">@dimen/list_item_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ListItemContent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/list_item_content</item>
+    </style>
+
+    <style name="ListItemImage" parent="ListItemContent">
+        <item name="android:layout_marginEnd">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_width">@dimen/list_item_content</item>
+    </style>
+
+    <style name="ListItemText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_alignParentStart">true</item>
+    </style>
+
+    <style name="ListItemText.Title">
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ListItemText.Subtitle">
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

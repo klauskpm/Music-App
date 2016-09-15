@@ -2,13 +2,14 @@ package br.com.klauskpm.musicapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MusicianActivity extends AppCompatActivity {
     private List<Album> mArrayAlbums = new ArrayList<Album>();
+    private String mMusicianName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,15 +17,18 @@ public class MusicianActivity extends AppCompatActivity {
         setContentView(R.layout.activity_musician);
 
         Bundle intentData = getIntent().getExtras();
+        mMusicianName = intentData.getString("musician");
 
-        String musicianName = intentData.getString("musician");
-        Log.d("MUSICIAN ACTIVITY", musicianName);
-
+        // Create musicians, albums, musics; to list them
         FakeData data = new FakeData(this);
-        mArrayAlbums = data.getAlbums(musicianName);
+        // Gets the musician's albums
+        mArrayAlbums = data.getAlbums(mMusicianName);
 
-        for (int i = 0; i < mArrayAlbums.size(); i++) {
-            Log.d("MUSICIAN ACTIVITY", "onCreate: " + mArrayAlbums.get(i).getmName());
-        }
+        // Initiating the Musician Adapter for a list with custom data
+        AlbumAdapter adapter = new AlbumAdapter(this, mArrayAlbums);
+
+        // Searching for the target list and setting the adapter
+        ListView list = (ListView) findViewById(R.id.list_view);
+        list.setAdapter(adapter);
     }
 }
