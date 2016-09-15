@@ -6,4 +6,6 @@
     <dimen name="list_item_height">72dp</dimen>
 
     <dimen name="list_item_content">48dp</dimen>
+
+    <dimen name="activity_subtitle">48dp</dimen>
 </resources>
