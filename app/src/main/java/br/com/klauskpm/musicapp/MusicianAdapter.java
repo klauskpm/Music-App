@@ -33,18 +33,26 @@ public class MusicianAdapter extends ArrayAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        // Inflating the musician item layout
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View musicianView = inflater.inflate(R.layout.musician_item, parent, false);
 
+        // Searching and setting all resource views
         ImageView musicianImage = (ImageView) musicianView.findViewById(R.id.musician_image__image_view);
         TextView musicianName = (TextView) musicianView.findViewById(R.id.musician_name__text_view);
         TextView musicianAlbumsCount = (TextView) musicianView.findViewById(R.id.musician_albuns_count__text_view);
 
+        // Getting the data for the current musician
         Musician currentMusician = this.mMusicians.get(position);
 
+        // Setting the musician image
         musicianImage.setBackground(currentMusician.getmImg());
+
+        // Setting the musician name
         musicianName.setText(currentMusician.getmName());
 
+        // Setting the amount of albums, with resource string,
+        // made by the musician
         int albumsCount = currentMusician.getmArrayAlbums().size();
         String stringAlbumsCount = getContext().getString(R.string.musician_albums_count, albumsCount);
         musicianAlbumsCount.setText(stringAlbumsCount);

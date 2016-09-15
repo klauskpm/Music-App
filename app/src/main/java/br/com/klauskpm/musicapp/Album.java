@@ -17,6 +17,12 @@ public class Album {
         this.mCoverImg = mCoverImg;
     }
 
+    public Album(String mName, Drawable mCoverImg, Musician mMusician) {
+        this.mName = mName;
+        this.mCoverImg = mCoverImg;
+        this.mMusician = mMusician;
+    }
+
     public String getmName() {
         return mName;
     }

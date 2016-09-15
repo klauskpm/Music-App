@@ -45,8 +45,7 @@ public class Musician {
     }
 
     public void createAlbum(String albumName, Drawable albumCoverImg) {
-        Album album = new Album(albumName, albumCoverImg);
-        album.setmMusician(this);
+        Album album = new Album(albumName, albumCoverImg, this);
 
         mArrayAlbums.add(album);
     }
