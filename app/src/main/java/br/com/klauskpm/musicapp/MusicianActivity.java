@@ -3,6 +3,7 @@ package br.com.klauskpm.musicapp;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,9 @@ public class MusicianActivity extends AppCompatActivity {
 
         Bundle intentData = getIntent().getExtras();
         mMusicianName = intentData.getString("musician");
+
+        TextView musicianNameTextView = (TextView) findViewById(R.id.musician_name__text_view);
+        musicianNameTextView.setText(mMusicianName);
 
         // Create musicians, albums, musics; to list them
         FakeData data = new FakeData(this);
