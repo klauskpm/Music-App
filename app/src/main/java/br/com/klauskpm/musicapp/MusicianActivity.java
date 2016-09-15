@@ -2,6 +2,7 @@ package br.com.klauskpm.musicapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -34,5 +35,12 @@ public class MusicianActivity extends AppCompatActivity {
         // Searching for the target list and setting the adapter
         ListView list = (ListView) findViewById(R.id.list_view);
         list.setAdapter(adapter);
+
+        musicianNameTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
