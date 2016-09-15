@@ -8,6 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ActivityTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/activity_title</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
     <style name="ActivitySubtitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/activity_subtitle</item>

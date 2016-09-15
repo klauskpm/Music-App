@@ -12,7 +12,11 @@
 
     <TextView
         android:id="@+id/musician_name__text_view"
-        style="@style/ActivitySubtitle" />
+        style="@style/ActivityTitle"/>
+
+    <TextView
+        style="@style/ActivitySubtitle"
+        android:text="Albums"/>
 
     <ListView
         android:id="@+id/list_view"
