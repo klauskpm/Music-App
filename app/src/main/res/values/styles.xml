@@ -8,11 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="HighlightText">
+    <style name="Container">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingStart">@dimen/activity_horizontal_margin</item>
         <item name="android:paddingEnd">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="HighlightText" parent="Container">
+        <item name="android:gravity">center_vertical</item>
     </style>
 
     <style name="ActivityTitle" parent="HighlightText">
@@ -32,6 +36,8 @@
         <item name="android:layout_height">@dimen/activity_subtitle</item>
         <item name="android:textSize">16sp</item>
     </style>
+
+    <style name="List" parent="Container"></style>
 
     <style name="ListItem">
         <item name="android:layout_height">@dimen/list_item_height</item>

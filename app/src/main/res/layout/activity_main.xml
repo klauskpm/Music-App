@@ -10,14 +10,11 @@
     <TextView
         android:id="@+id/musician_name__text_view"
         style="@style/ActivityTitle"
-        android:text="@string/musicians"/>
+        android:text="@string/musicians" />
 
     <ListView
         android:id="@+id/list_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="@dimen/activity_horizontal_margin"
-        android:paddingEnd="@dimen/activity_horizontal_margin">
+        style="@style/List">
 
     </ListView>
 </LinearLayout>
