@@ -3,4 +3,5 @@
     <string name="musician_albums_count">Album(s): %1$d</string>
     <string name="albums">Albums</string>
     <string name="musicians">Musicians</string>
+    <string name="return_to_musicians_list">Return to musicians list</string>
 </resources>

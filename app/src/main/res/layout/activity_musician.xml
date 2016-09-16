@@ -8,9 +8,8 @@
     tools:context="br.com.klauskpm.musicapp.MusicianActivity">
 
     <TextView
-        android:id="@+id/musician_name__text_view"
-        style="@style/ActivityTitle"
-        />
+        style="@style/ActivityTitle.Back"
+        android:id="@+id/musician_name__text_view" />
 
     <TextView
         style="@style/ActivitySubtitle"
@@ -19,7 +18,9 @@
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin">
 
     </ListView>
 </LinearLayout>
