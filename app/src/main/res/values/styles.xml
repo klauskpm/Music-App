@@ -11,11 +11,14 @@
     <style name="Container">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Container.Spaced">
         <item name="android:paddingStart">@dimen/activity_horizontal_margin</item>
         <item name="android:paddingEnd">@dimen/activity_horizontal_margin</item>
     </style>
 
-    <style name="HighlightText" parent="Container">
+    <style name="HighlightText" parent="Container.Spaced">
         <item name="android:gravity">center_vertical</item>
     </style>
 
@@ -37,7 +40,7 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="List" parent="Container"></style>
+    <style name="List" parent="Container.Spaced"></style>
 
     <style name="ListItem">
         <item name="android:layout_height">@dimen/list_item_height</item>
