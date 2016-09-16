@@ -47,6 +47,7 @@ public class MusicianAdapter extends ArrayAdapter {
 
         // Setting the musician image
         musicianImage.setBackground(currentMusician.getmImg());
+        musicianImage.setContentDescription(currentMusician.getmName());
 
         // Setting the musician name
         musicianName.setText(currentMusician.getmName());

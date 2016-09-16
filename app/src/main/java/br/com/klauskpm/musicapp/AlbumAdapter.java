@@ -38,6 +38,13 @@ public class AlbumAdapter extends ArrayAdapter {
 
         // Setting the album cover image
         albumCoverImage.setBackground(currentAlbum.getmCoverImg());
+        albumCoverImage.setContentDescription(
+                mContext.getString(
+                        R.string.album_description,
+                        currentAlbum.getmName(),
+                        currentAlbum.getmMusician().getmName()
+                )
+        );
 
         // Setting the album title
         albumTitle.setText(currentAlbum.getmName());
