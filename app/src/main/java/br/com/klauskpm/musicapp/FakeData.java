@@ -14,6 +14,14 @@ public class FakeData {
     public FakeData(Context context) {
         createPharrell(context);
         createWillIAm(context);
+
+        for (int i = 0; i < 10; i++) {
+            // Creating a musician
+            this.mMusicians.add(
+                    new Musician("outro", context.getDrawable(R.drawable.will_i_am))
+            );
+        }
+
     }
 
     private void createWillIAm(Context context) {
