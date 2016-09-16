@@ -1,6 +1,7 @@
 package br.com.klauskpm.musicapp;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,10 @@ public class FakeData {
         Musician pharrellWilliams = new Musician("Pharrell Williams", context.getDrawable(R.drawable.pharrell_williams));
 
         // Creating musician albums
-        pharrellWilliams.createAlbum("GIRL", context.getDrawable(R.drawable.pharrell_williams_album_girl));
+        Album girl = pharrellWilliams.createAlbum("GIRL", context.getDrawable(R.drawable.pharrell_williams_album_girl));
+
+        MediaPlayer happyMusic = MediaPlayer.create(context, R.raw.oie);
+        girl.createMusic("Happy", happyMusic);
 
         this.mMusicians.add(pharrellWilliams);
     }

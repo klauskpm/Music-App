@@ -44,10 +44,12 @@ public class Musician {
         return mArrayAlbums.get(position);
     }
 
-    public void createAlbum(String albumName, Drawable albumCoverImg) {
+    public Album createAlbum(String albumName, Drawable albumCoverImg) {
         Album album = new Album(albumName, albumCoverImg, this);
 
         mArrayAlbums.add(album);
+
+        return album;
     }
 
     public void setmArrayAlbums(List<Album> mArrayAlbums) {
