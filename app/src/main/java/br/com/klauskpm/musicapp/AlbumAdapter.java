@@ -32,6 +32,7 @@ public class AlbumAdapter extends ArrayAdapter {
         // Searching and setting all resource views
         ImageView albumCoverImage = (ImageView) albumView.findViewById(R.id.list_item_image__image_view);
         TextView albumTitle = (TextView) albumView.findViewById(R.id.list_item_title__text_view);
+        TextView albumMusicsCount = (TextView) albumView.findViewById(R.id.list_item_subtitle__text_view);
 
         // Getting the data for the current album
         Album currentAlbum = mAlbums.get(position);
@@ -48,6 +49,12 @@ public class AlbumAdapter extends ArrayAdapter {
 
         // Setting the album title
         albumTitle.setText(currentAlbum.getmName());
+
+        // Setting the amount of musics, with resource string,
+        // that make up the album
+        int musicsCount = currentAlbum.getmArrayMusics().size();
+        String stringMusicCount= getContext().getString(R.string.albums_music_count, musicsCount);
+        albumMusicsCount.setText(stringMusicCount);
 
         return albumView;
     }
