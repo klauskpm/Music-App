@@ -8,7 +8,7 @@
     tools:context="br.com.klauskpm.musicapp.MusicianActivity">
 
     <TextView
-        android:id="@+id/musician_name__text_view"
+        android:id="@+id/activity_title__text_view"
         style="@style/ActivityTitle.Back" />
 
     <TextView
@@ -17,7 +17,5 @@
 
     <ListView
         android:id="@+id/list_view"
-        style="@style/List">
-
-    </ListView>
+        style="@style/List" />
 </LinearLayout>

@@ -21,7 +21,7 @@ public class MusicianActivity extends AppCompatActivity {
         Bundle intentData = getIntent().getExtras();
         mMusicianName = intentData.getString("musician");
 
-        TextView musicianNameTextView = (TextView) findViewById(R.id.musician_name__text_view);
+        TextView musicianNameTextView = (TextView) findViewById(R.id.activity_title__text_view);
         musicianNameTextView.setText(mMusicianName);
 
         // Create musicians, albums, musics; to list them
