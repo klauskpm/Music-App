@@ -58,4 +58,16 @@ public class FakeData {
 
         return null;
     }
+
+    public List<Music> getMusics(String musicianName, String albumTitle) {
+        List<Album> arrayAlbums = this.getAlbums(musicianName);
+
+        for (int i = 0; i < arrayAlbums.size(); i++) {
+            if (arrayAlbums.get(i).getmName().equalsIgnoreCase(albumTitle)) {
+                return arrayAlbums.get(i).getmArrayMusics();
+            }
+        }
+
+        return null;
+    }
 }

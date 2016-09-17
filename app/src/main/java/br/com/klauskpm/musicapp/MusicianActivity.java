@@ -12,24 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MusicianActivity extends AppCompatActivity {
-    private List<Album> mArrayAlbums = new ArrayList<Album>();
-    private String mMusicianName;
+    List<Album> mArrayAlbums = new ArrayList<Album>();
+    String mMusicianName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_musician);
 
-        Bundle intentData = getIntent().getExtras();
-        mMusicianName = intentData.getString("musician");
+        // Get the data from intent
+        initIntentData();
 
         TextView musicianNameTextView = (TextView) findViewById(R.id.activity_title__text_view);
         musicianNameTextView.setText(mMusicianName);
-
-        // Create musicians, albums, musics; to list them
-        FakeData data = new FakeData(this);
-        // Gets the musician's albums
-        mArrayAlbums = data.getAlbums(mMusicianName);
 
         // Initiating the Musician Adapter for a list with custom data
         AlbumAdapter adapter = new AlbumAdapter(this, mArrayAlbums);
@@ -62,5 +57,18 @@ public class MusicianActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    /**
+     * Get the intent data and sets the musician name and a list of albums
+     */
+    private void initIntentData() {
+        Bundle intentData = getIntent().getExtras();
+        mMusicianName = intentData.getString("musician");
+
+        // Create musicians, albums, musics; to list them
+        FakeData data = new FakeData(this);
+        // Gets the musician's albums
+        mArrayAlbums = data.getAlbums(mMusicianName);
     }
 }
