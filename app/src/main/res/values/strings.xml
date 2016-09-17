@@ -6,4 +6,7 @@
     <string name="return_to_musicians_list">Return to musicians list</string>
     <string name="album_description">Album %1$s from %2$s</string>
     <string name="albums_music_count">Music(s): %1$d</string>
+    <string name="musics">Musics</string>
+    <string name="musician">Musician</string>
+    <string name="album">Album</string>
 </resources>

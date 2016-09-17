@@ -1,8 +1,10 @@
 package br.com.klauskpm.musicapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -36,10 +38,28 @@ public class MusicianActivity extends AppCompatActivity {
         ListView list = (ListView) findViewById(R.id.list_view);
         list.setAdapter(adapter);
 
+        // Finishes the activity
         musicianNameTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        // Add a behavior to the item click
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Finds the album
+                final Album album = (Album) parent.getItemAtPosition(position);
+                // Creates an intent
+                Intent intent = new Intent(parent.getContext(), AlbumActivity.class);
+
+                // Send the album and musician name,
+                //  to find the music, and start the activity
+                intent.putExtra("musician", album.getmMusician().getmName());
+                intent.putExtra("album", album.getmName());
+                startActivity(intent);
             }
         });
     }

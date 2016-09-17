@@ -54,9 +54,23 @@
         <item name="android:layout_height">@dimen/list_item_content</item>
     </style>
 
+    <style name="ListItemContent.Box">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
     <style name="ListItemImage" parent="ListItemContent">
         <item name="android:layout_marginEnd">@dimen/activity_horizontal_margin</item>
         <item name="android:layout_width">@dimen/list_item_content</item>
+    </style>
+
+    <style name="ListItemActionButton" parent="ListItemContent">
+        <item name="android:layout_marginStart">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_width">@dimen/list_item_content</item>
+    </style>
+
+    <style name="ListItemActionButton.Play">
+        <item name="android:src">@drawable/ic_play_arrow_black_24dp</item>
     </style>
 
     <style name="ListItemText">
