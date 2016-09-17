@@ -99,7 +99,7 @@ public class MusicAdapter extends ArrayAdapter {
             musicAction.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(mContext, "There is no music to play", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, R.string.no_music, Toast.LENGTH_SHORT).show();
                 }
             });
         }
