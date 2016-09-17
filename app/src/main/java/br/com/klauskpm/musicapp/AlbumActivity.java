@@ -2,6 +2,8 @@ package br.com.klauskpm.musicapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -23,7 +25,17 @@ public class AlbumActivity extends AppCompatActivity {
         TextView albumTitleTextView = (TextView) findViewById(R.id.activity_title__text_view);
         albumTitleTextView.setText(mAlbumName);
 
+        MusicAdapter adapter = new MusicAdapter(this, mArrayMusics);
 
+        ListView list = (ListView) findViewById(R.id.list_view);
+        list.setAdapter(adapter);
+
+        albumTitleTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     /**

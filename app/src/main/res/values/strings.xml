@@ -9,4 +9,7 @@
     <string name="musics">Musics</string>
     <string name="musician">Musician</string>
     <string name="album">Album</string>
+    <string name="music_duration">%1$d:%2$d</string>
+    <string name="music_content_author">by %1$s</string>
+    <string name="music_content_duration">Duration: %1$s</string>
 </resources>

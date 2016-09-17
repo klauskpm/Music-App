@@ -41,6 +41,7 @@ public class FakeData {
 
         MediaPlayer happyMusic = MediaPlayer.create(context, R.raw.oie);
         girl.createMusic("Happy", happyMusic);
+        girl.createMusic("Whoopsie");
 
         this.mMusicians.add(pharrellWilliams);
     }

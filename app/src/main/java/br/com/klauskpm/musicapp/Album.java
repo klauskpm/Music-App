@@ -67,8 +67,16 @@ public class Album {
         return mArrayMusics.get(position);
     }
 
+    public Music createMusic(String musicTitle) {
+        Music music = new Music(musicTitle, this);
+
+        mArrayMusics.add(music);
+
+        return music;
+    }
+
     public Music createMusic(String musicTitle, MediaPlayer musicAudio) {
-        Music music = new Music(musicTitle, musicAudio);
+        Music music = new Music(musicTitle, musicAudio, this);
 
         mArrayMusics.add(music);
 

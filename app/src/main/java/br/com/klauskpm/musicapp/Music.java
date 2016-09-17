@@ -8,10 +8,17 @@ import android.media.MediaPlayer;
 public class Music {
     private String mTitle;
     private MediaPlayer mMediaPlayer;
+    private Album mAlbum;
 
-    public Music(String mTitle, MediaPlayer mMediaPlayer) {
+    public Music(String mTitle, Album mAlbum) {
+        this.mTitle = mTitle;
+        this.mAlbum = mAlbum;
+    }
+
+    public Music(String mTitle, MediaPlayer mMediaPlayer, Album mAlbum) {
         this.mTitle = mTitle;
         this.mMediaPlayer = mMediaPlayer;
+        this.mAlbum = mAlbum;
     }
 
     public String getmTitle() {
@@ -40,13 +47,25 @@ public class Music {
         return true;
     }
 
-    public boolean stop() {
+    public boolean pause() {
         if (mMediaPlayer == null)
             return false;
 
         if (mMediaPlayer.isPlaying())
-            mMediaPlayer.stop();
+            mMediaPlayer.pause();
 
         return true;
+    }
+
+    public boolean hasAudioFile() {
+        return mMediaPlayer != null;
+    }
+
+    public Album getmAlbum() {
+        return mAlbum;
+    }
+
+    public void setmAlbum(Album mAlbum) {
+        this.mAlbum = mAlbum;
     }
 }
