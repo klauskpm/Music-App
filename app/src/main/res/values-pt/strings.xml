@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="album">Álbum</string>
+    <string name="album_description">Álbum %1$s do %2$s</string>
+    <string name="albums">Álbuns</string>
+    <string name="albums_music_count">Música(s): %1$d</string>
+    <string name="music_content_author">por %1$s</string>
+    <string name="music_content_duration">Duração: %1$s</string>
+    <string name="musician">Músico</string>
+    <string name="musician_albums_count">Álbum(ns): %1$d</string>
+    <string name="musicians">Músicos</string>
+    <string name="musics">Músicas</string>
+    <string name="no_music">Não tem música para tocar</string>
+    <string name="return_to_musicians_list">Retorna para a lista de músicos</string>
+</resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Music App</string>
+    <string name="app_name" translatable="false">Music App</string>
     <string name="musician_albums_count">Album(s): %1$d</string>
     <string name="albums">Albums</string>
     <string name="musicians">Musicians</string>
@@ -9,7 +9,7 @@
     <string name="musics">Musics</string>
     <string name="musician">Musician</string>
     <string name="album">Album</string>
-    <string name="music_duration">%1$d:%2$d</string>
+    <string name="music_duration" translatable="false">%1$d:%2$d</string>
     <string name="music_content_author">by %1$s</string>
     <string name="music_content_duration">Duration: %1$s</string>
     <string name="no_music">There is no music to play</string>
