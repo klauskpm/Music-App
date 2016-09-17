@@ -8,7 +8,6 @@
     tools:context="br.com.klauskpm.musicapp.MainActivity">
 
     <TextView
-        android:id="@+id/musician_name__text_view"
         style="@style/ActivityTitle"
         android:text="@string/musicians" />
 
