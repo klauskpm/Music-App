@@ -16,7 +16,7 @@
 
     </RelativeLayout>
 
-    <ImageButton
+    <ImageView
         style="@style/ListItemActionButton.Play"
         android:id="@+id/music_item_action__image_button"/>
 </LinearLayout>

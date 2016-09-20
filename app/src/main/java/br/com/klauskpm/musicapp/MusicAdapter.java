@@ -5,9 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class MusicAdapter extends ArrayAdapter {
     private final Context mContext;
     private final List<Music> mMusics;
-    private Music mCurrentMusicPlaying;
+    public Music currentMusicPlaying;
 
     public MusicAdapter(Context context, List<Music> musics) {
         super(context, -1, musics);
@@ -35,7 +34,7 @@ public class MusicAdapter extends ArrayAdapter {
 
         TextView musicTitle = (TextView) musicView.findViewById(R.id.list_item_title__text_view);
         TextView musicContent = (TextView) musicView.findViewById(R.id.list_item_subtitle__text_view);
-        ImageButton musicAction = (ImageButton) musicView.findViewById(R.id.music_item_action__image_button);
+        ImageView musicAction = (ImageView) musicView.findViewById(R.id.music_item_action__image_button);
 
         final Music currentMusic = this.mMusics.get(position);
 
@@ -70,16 +69,16 @@ public class MusicAdapter extends ArrayAdapter {
                 @Override
                 public void onClick(View v) {
                     // If it's the first music to be played, it will play and set the
-                    // mCurrentMusicPlaying, finishing the action
-                    if (mCurrentMusicPlaying == null) {
-                        mCurrentMusicPlaying = currentMusic;
+                    // currentMusicPlaying, finishing the action
+                    if (currentMusicPlaying == null) {
+                        currentMusicPlaying = currentMusic;
                         currentMusic.play();
                         return;
                     }
 
                     // If the action button of a previous playing music is hit a second time
                     // it will make the music to pause
-                    if (mCurrentMusicPlaying.getmTitle().equals(currentMusic.getmTitle())) {
+                    if (currentMusicPlaying.getmTitle().equals(currentMusic.getmTitle())) {
                         if (currentMusic.getmMediaPlayer().isPlaying()) {
                             currentMusic.pause();
                         } else {
@@ -87,23 +86,20 @@ public class MusicAdapter extends ArrayAdapter {
                         }
                     }
                     // If the action button of a different music is hit, it shall pause the previous
-                    // and start this, changing the mCurrentMusicPlaying
+                    // and start this, changing the currentMusicPlaying
                     else {
-                        mCurrentMusicPlaying.pause();
+                        currentMusicPlaying.pause();
                         currentMusic.play();
-                        mCurrentMusicPlaying = currentMusic;
+                        currentMusicPlaying = currentMusic;
                     }
                 }
             });
         } else {
-            musicAction.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(mContext, R.string.no_music, Toast.LENGTH_SHORT).show();
-                }
-            });
+            // Disable the action button if there is no source file
+            musicAction.setEnabled(false);
         }
 
+        // Set the musician name and the duration of the music, if there is one
         musicContent.setText(musicContentString);
 
         return musicView;

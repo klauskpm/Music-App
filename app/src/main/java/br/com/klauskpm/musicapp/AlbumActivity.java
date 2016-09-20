@@ -25,7 +25,7 @@ public class AlbumActivity extends AppCompatActivity {
         TextView albumTitleTextView = (TextView) findViewById(R.id.activity_title__text_view);
         albumTitleTextView.setText(mAlbumName);
 
-        MusicAdapter adapter = new MusicAdapter(this, mArrayMusics);
+        final MusicAdapter adapter = new MusicAdapter(this, mArrayMusics);
 
         ListView list = (ListView) findViewById(R.id.list_view);
         list.setAdapter(adapter);
@@ -33,6 +33,9 @@ public class AlbumActivity extends AppCompatActivity {
         albumTitleTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (adapter.currentMusicPlaying != null) {
+                    adapter.currentMusicPlaying.pause();
+                }
                 finish();
             }
         });

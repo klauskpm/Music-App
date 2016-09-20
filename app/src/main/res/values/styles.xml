@@ -40,7 +40,7 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="List" parent="Container.Spaced"></style>
+    <style name="List" parent="Container.Spaced" />
 
     <style name="ListItem">
         <item name="android:layout_height">@dimen/list_item_height</item>
@@ -72,6 +72,7 @@
     <style name="ListItemActionButton.Play">
         <item name="android:src">@drawable/ic_play_arrow_black_24dp</item>
         <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:tint">@color/button_color</item>
     </style>
 
     <style name="ListItemText">
