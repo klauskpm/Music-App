@@ -12,6 +12,11 @@ import java.util.List;
 public class FakeData {
     private List<Musician> mMusicians = new ArrayList<Musician>();
 
+    /**
+     * Creates fake data to feed the lists
+     *
+     * @param context of the activity
+     */
     public FakeData(Context context) {
         createPharrell(context);
         createWillIAm(context);
@@ -25,6 +30,10 @@ public class FakeData {
 
     }
 
+    /**
+     * Create the musician Will.I.Am
+     * @param context of the activity
+     */
     private void createWillIAm(Context context) {
         // Creating a musician
         Musician willIAm = new Musician("Will.I.Am", context.getDrawable(R.drawable.will_i_am));
@@ -32,13 +41,18 @@ public class FakeData {
         this.mMusicians.add(willIAm);
     }
 
+    /**
+     * Create the musician Pharrell Williams and it's resources
+     * @param context of the activity
+     */
     private void createPharrell(Context context) {
         // Creating a musician
         Musician pharrellWilliams = new Musician("Pharrell Williams", context.getDrawable(R.drawable.pharrell_williams));
 
-        // Creating musician albums
+        // Creating musician's albums
         Album girl = pharrellWilliams.createAlbum("GIRL", context.getDrawable(R.drawable.pharrell_williams_album_girl));
 
+        // Creating album's music
         MediaPlayer happyMusic = MediaPlayer.create(context, R.raw.oie);
         girl.createMusic("Happy", happyMusic);
         girl.createMusic("Whoopsie");
@@ -46,13 +60,22 @@ public class FakeData {
         this.mMusicians.add(pharrellWilliams);
     }
 
+    /**
+     *
+     * @return a list of musicians
+     */
     public List<Musician> getMusicians() {
         return mMusicians;
     }
 
-    public List<Album> getAlbums(String musicianName) {
+    /**
+     *
+     * @param name of the desired musician
+     * @return a list of albums from a musician
+     */
+    public List<Album> getAlbums(String name) {
         for (int i = 0; i < mMusicians.size(); i++) {
-            if (mMusicians.get(i).getmName().equalsIgnoreCase(musicianName)) {
+            if (mMusicians.get(i).getmName().equalsIgnoreCase(name)) {
                 return mMusicians.get(i).getmArrayAlbums();
             }
         }
@@ -60,6 +83,12 @@ public class FakeData {
         return null;
     }
 
+    /**
+     *
+     * @param musicianName of the desired musician
+     * @param albumTitle of the desired album
+     * @return a list of musics from an album
+     */
     public List<Music> getMusics(String musicianName, String albumTitle) {
         List<Album> arrayAlbums = this.getAlbums(musicianName);
 
