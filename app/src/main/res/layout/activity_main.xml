@@ -11,6 +11,10 @@
         style="@style/ActivityTitle"
         android:text="@string/musicians" />
 
+    <TextView
+        style="@style/ActivityExplanation"
+        android:text="@string/main_activity_text_explanation" />
+
     <ListView
         android:id="@+id/list_view"
         style="@style/List">

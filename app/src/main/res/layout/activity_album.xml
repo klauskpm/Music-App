@@ -12,6 +12,10 @@
         style="@style/ActivityTitle.Back" />
 
     <TextView
+        style="@style/ActivityExplanation"
+        android:text="@string/albums_activity_text_explanation" />
+
+    <TextView
         style="@style/ActivitySubtitle"
         android:text="@string/musics" />
 

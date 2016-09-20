@@ -13,4 +13,7 @@
     <string name="music_content_author">by %1$s</string>
     <string name="music_content_duration">Duration: %1$s</string>
     <string name="no_music">There is no music to play</string>
+    <string name="main_activity_text_explanation">When you open the app a list of musicians appears below. Clicking on a musician, will lead to a new activity with a list of albums.</string>
+    <string name="musicians_activity_text_explanation">In this activity, the musician\'s albums will be listed. When click, the album will call another activity with the list of musics.</string>
+    <string name="albums_activity_text_explanation">In this activity are listed the album\'s musics. When a music have and MediaPlayer/Sound file, it has the option to play.</string>
 </resources>
