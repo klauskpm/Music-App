@@ -26,7 +26,7 @@ public class MusicianActivity extends AppCompatActivity {
         TextView musicianNameTextView = (TextView) findViewById(R.id.activity_title__text_view);
         musicianNameTextView.setText(mMusicianName);
 
-        // Initiating the Musician Adapter for a list with custom data
+        // Initiating the Album Adapter for a list with custom data
         AlbumAdapter adapter = new AlbumAdapter(this, mArrayAlbums);
 
         // Searching for the target list and setting the adapter
