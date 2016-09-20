@@ -25,11 +25,14 @@ public class AlbumActivity extends AppCompatActivity {
         TextView albumTitleTextView = (TextView) findViewById(R.id.activity_title__text_view);
         albumTitleTextView.setText(mAlbumName);
 
+        // Initiating the Music Adapter for a list with custom data
         final MusicAdapter adapter = new MusicAdapter(this, mArrayMusics);
 
+        // Searching for the target list and setting the adapter
         ListView list = (ListView) findViewById(R.id.list_view);
         list.setAdapter(adapter);
 
+        // Finishes the activity and stop the current music
         albumTitleTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
