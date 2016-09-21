@@ -12,4 +12,7 @@
     <string name="musics">Músicas</string>
     <string name="no_music">Não tem música para tocar</string>
     <string name="return_to_musicians_list">Retorna para a lista de músicos</string>
+    <string name="albums_activity_text_explanation">Nessa atividade são listadas as músicas do álbum. Quando a música tem um Media Player/arquivo de som, ele tem a opção de tocar.</string>
+    <string name="main_activity_text_explanation">Quando você abre o aplicativo uma lista de músicos aparece abaixo. Clicando no músico, você irá para uma nova atividade com uma lista de álbums.</string>
+    <string name="musicians_activity_text_explanation">Nesta atividade serão listados os álbums do artista. Quando clicado, o álbum irá chamar uma nova atividade com uma lista de suas músicas.</string>
 </resources>
